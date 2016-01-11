@@ -10,8 +10,6 @@ use Donquixote\Containerkit\Helper\IndirectMagicGet;
  * Base class for hard-coded service containers.
  *
  * This version has a special way to deal with circularity.
- *
- * See http://dqxtech.net/blog/2014-06-13/simple-do-it-yourself-php-service-container
  */
 abstract class StubbableContainerBase implements SettableContainerInterface {
 

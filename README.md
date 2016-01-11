@@ -25,4 +25,6 @@ The `__set()` allows to override specific services with actual objects, thus pro
 
 ## Stubbable container
 
-This container also has a 
+This container is designed for a special way to deal with circular dependencies, using stubs.
+
+Usually this is not needed. You should either avoid circular dependencies (recommended, if you can), or use a proxy somewhere in the circle.
