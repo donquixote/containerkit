@@ -20,8 +20,8 @@ trait SettableContainerTrait {
    */
   function __set($key, $value) {
     if (array_key_exists($key, $this->buffer)) {
-      $key_safe = check_plain($key);
-      throw new ContainerException("Service or value for '$key_safe' already set.");
+      // @todo Sanitize $key for exception message?
+      throw new ContainerException("Service or value for '$key' already set.");
     }
     $this->buffer[$key] = $value;
   }

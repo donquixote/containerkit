@@ -28,8 +28,8 @@ trait ContainerTrait {
     }
     $method = 'get_' . $key;
     if (!method_exists($this, $method)) {
-      $key_safe = check_plain($key);
-      throw new ContainerException("Service or value for '$key_safe' already set.");
+      // @todo Sanitize $key for exception message?
+      throw new ContainerException("Service or value for '$key' already set.");
     }
     return $this->buffer[$key] = $this->$method();
   }
