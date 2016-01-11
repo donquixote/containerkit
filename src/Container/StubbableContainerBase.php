@@ -26,8 +26,8 @@ abstract class StubbableContainerBase implements SettableContainerInterface {
     }
     $method = 'get_' . $key;
     if (!method_exists($this, $method)) {
-      $key_safe = htmlspecialchars($key, ENT_QUOTES, 'UTF-8');
-      throw new ContainerException("Service or value for '$key_safe' already set.");
+      // @todo Sanitize $key for exception message?
+      throw new ContainerException("Service or value for '$key' already set.");
     }
     $value = $this->$method();
     if (array_key_exists($key, $this->buffer)) {
