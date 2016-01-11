@@ -4,6 +4,10 @@ namespace Donquixote\Containerkit\Container;
 
 use Donquixote\Containerkit\Exception\ContainerException;
 
+/**
+ * The traits allow to make the private $buffer variable available to all
+ * the container base classes, but hide it from the actual implementations.
+ */
 trait ContainerTrait {
 
   /**
